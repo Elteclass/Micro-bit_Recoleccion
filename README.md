@@ -1,107 +1,109 @@
-# Práctica: Adquisición de Datos Serial con micro:bit
+# 🎯 Práctica: Adquisición de Datos Serial con micro:bit
 
-Este repositorio contiene el código para una práctica de la materia de Sistemas Programables. El objetivo es demostrar la adquisición de datos de sensores desde un dispositivo embebido (micro:bit) a través de la comunicación serial, y su procesamiento en un PC utilizando tres lenguajes de programación distintos: Python, JavaScript (Node.js) y Go.
+<div align="center">
 
----
+![micro:bit](https://img.shields.io/badge/micro:bit-V2-00ED00?style=for-the-badge&logo=micro:bit&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
 
-## Información del Autor
+**Sistemas Programables** | *Instituto Tecnológico de Tijuana*
 
-* **Nombre:** Jaime Antonio Alvarez Crisostomo
-* **Materia:** Sistemas Programables
-* **Carrera:** Ingeniería en Sistemas Computacionales
-* **Institución:** Instituto Tecnológico de Tijuana
-
----
-
-## 1. Funcionamiento
-
-El proyecto se divide en dos componentes principales:
-
-### 1.1. Hardware (micro:bit)
-
-El código `microbit/makecode.js` está programado en MakeCode (JavaScript) y realiza las siguientes tareas:
-
-* En un bucle infinito (cada 1 segundo):
-    1.  Lee los sensores integrados de **temperatura** (`°C`).
-    2.  Lee el sensor de **nivel de luz** (un valor de 0 a 255).
-    3.  Lee el **acelerómetro** en el eje X.
-* Empaqueta estos tres valores en un objeto **JSON**.
-* Envía el *string* JSON completo a través de la comunicación serial (USB), seguido de un salto de línea (`\n`).
-
-### 1.2. Software (PC)
-
-Los *scripts* en la carpeta `pc-scripts/` se conectan al puerto serie donde está el micro:bit. Cada *script* espera recibir datos, lee una línea completa (hasta el `\n`), y luego "parsea" (decodifica) el *string* JSON para convertirlo en un objeto o estructura nativa del lenguaje, imprimiéndolo finalmente en la consola.
+</div>
 
 ---
 
-## 2. Guía de Instalación y Uso
+## 📋 Descripción del Proyecto
 
-Sigue estos pasos para ejecutar el proyecto.
+Este repositorio contiene una práctica completa de **adquisición de datos de sensores** desde un dispositivo embebido (micro:bit V2) hacia una PC mediante comunicación serial. Los datos se procesan utilizando **tres lenguajes de programación diferentes**: Python, JavaScript (Node.js) y Go.
 
-### Paso 1: Programar el micro:bit
+> 💡 **Objetivo:** Demostrar la integración de hardware embebido con software de procesamiento en múltiples plataformas y lenguajes.
 
-1.  Conecta tu micro:bit V2 a la computadora.
-2.  Aparecerá una nueva unidad llamada `MICROBIT`.
-3.  Arrastra y suelta el archivo `microbit/microbit-practica.hex` dentro de esa unidad.
-4.  El micro:bit se reiniciará y mostrará un ícono de corazón (❤️). Ya está enviando datos.
+---
 
-### Paso 2: Identificar el Puerto COM
+## 👨‍💻 Información del Autor
 
-Antes de ejecutar los *scripts*, necesitas saber el nombre del puerto serie de tu micro:bit.
+| Campo | Información |
+|-------|-------------|
+| **Nombre** | Jaime Antonio Alvarez Crisostomo |
+| **Materia** | Sistemas Programables |
+| **Carrera** | Ingeniería en Sistemas Computacionales |
+| **Institución** | Instituto Tecnológico de Tijuana |
 
-* **En Windows:** Abre el **Administrador de dispositivos** y busca en **Puertos (COM y LPT)**. El nombre será algo como `mbed Serial Port (COM3)`.
-* **En macOS:** Abre la terminal y ejecuta `ls /dev/tty.usbmodem*`. El nombre será `/dev/tty.usbmodem14202` o similar.
-* **En Linux:** Abre la terminal y ejecuta `ls /dev/ttyACM*`. El nombre será `/dev/ttyACM0` o similar.
+---
 
-**Importante:** En cada uno de los siguientes *scripts*, recuerda abrir el archivo y cambiar la variable `TU_PUERTO_COM` por el puerto que identificaste.
+## 🔧 Funcionamiento
 
-### Paso 3: Ejecutar los Scripts de PC
+### 🎛️ Componente Hardware (micro:bit)
 
-Puedes ejecutar cualquiera de los tres *scripts*. Asegúrate de estar en la carpeta raíz del proyecto.
+El código `microbit/makecode.js` programado en **MakeCode (JavaScript)** realiza las siguientes operaciones:
 
-#### A. Python 🐍
+**Ciclo de adquisición (cada 1 segundo):**
 
-1.  Navega a la carpeta de Python:
-    ```bash
-    cd pc-scripts/python
-    ```
-2.  Instala las dependencias (se recomienda usar un entorno virtual):
-    ```bash
-    pip install -r requirements.txt
-    ```
-3.  Ejecuta el script:
-    ```bash
-    python leer_serial.py
-    ```
+1. 🌡️ **Temperatura:** Lee el sensor integrado en grados Celsius
+2. 💡 **Nivel de luz:** Captura valores entre 0-255
+3. 📊 **Acelerómetro:** Mide la aceleración en el eje X
 
-#### B. JavaScript (Node.js) ⚡
+**Transmisión de datos:**
+- Empaqueta los valores en formato **JSON**
+- Envía el string completo vía **comunicación serial (USB)**
+- Finaliza cada transmisión con salto de línea (`\n`)
 
-1.  Navega a la carpeta de JavaScript:
-    ```bash
-    cd pc-scripts/javascript-node
-    ```
-2.  Instala las dependencias:
-    ```bash
-    npm install
-    ```
-3.  Ejecuta el script:
-    ```bash
-    node leer_serial.js
-    ```
+### 💻 Componente Software (PC)
 
-#### C. Go 🐿️
+Los scripts en `pc-scripts/` se conectan al puerto serial del micro:bit y realizan:
 
-1.  Navega a la carpeta de Go:
-    ```bash
-    cd pc-scripts/go
-    ```
-2.  Descarga las dependencias registradas en `go.mod`:
-    ```bash
-    go mod tidy
-    ```
-3.  Ejecuta el script:
-    ```bash
-    go run leer_serial.go
-    ```
+1. ✅ Conexión al puerto COM especificado
+2. 📥 Lectura de líneas completas (delimitadas por `\n`)
+3. 🔄 Parseo del JSON a estructuras nativas del lenguaje
+4. 🖨️ Impresión formateada de los datos en consola
 
-**Resultado esperado:** Verás los datos JSON llegand_o_ a tu terminal cada segundo, impresos por el lenguaje que hayas elegido.
+---
+
+## 🚀 Guía de Instalación y Uso
+
+### 📌 Paso 1: Programar el micro:bit
+
+1. Conecta tu **micro:bit V2** a la computadora vía USB
+2. Aparecerá una unidad de almacenamiento llamada `MICROBIT`
+3. Arrastra el archivo `microbit/microbit-practica.hex` a la unidad
+4. El micro:bit se reiniciará automáticamente
+5. ✅ Verás un ícono de corazón (❤️) indicando que está transmitiendo datos
+
+### 🔍 Paso 2: Identificar el Puerto COM
+
+Antes de ejecutar los scripts, necesitas identificar el puerto serial:
+
+<table>
+<tr>
+<td><b>🪟 Windows</b></td>
+<td>
+Abre el <b>Administrador de dispositivos</b> → <b>Puertos (COM y LPT)</b><br>
+Busca: <code>mbed Serial Port (COM3)</code> o similar
+</td>
+</tr>
+<tr>
+<td><b>🍎 macOS</b></td>
+<td>
+Terminal: <code>ls /dev/tty.usbmodem*</code><br>
+Ejemplo: <code>/dev/tty.usbmodem14202</code>
+</td>
+</tr>
+<tr>
+<td><b>🐧 Linux</b></td>
+<td>
+Terminal: <code>ls /dev/ttyACM*</code><br>
+Ejemplo: <code>/dev/ttyACM0</code>
+</td>
+</tr>
+</table>
+
+> ⚠️ **Importante:** Actualiza la variable `TU_PUERTO_COM` en cada script con el puerto identificado.
+
+### 🎮 Paso 3: Ejecutar los Scripts
+
+Selecciona tu lenguaje de preferencia y sigue las instrucciones:
+
+<details>
+<summary><b>🐍 Python</b></summary>
+```bash
