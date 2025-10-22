@@ -3,8 +3,8 @@ const { SerialPort } = require('serialport');
 const { ReadlineParser } = require('@serialport/parser-readline');
 
 // Reemplaza 'TU_PUERTO_COM' con tu puerto
-const PUERTO = 'TU_PUERTO_COM';
-const BAUD_RATE = 115200;
+const PUERTO = 'COM3';
+const BAUD_RATE = 38400;
 
 // 1. Creamos la instancia del puerto
 const port = new SerialPort({

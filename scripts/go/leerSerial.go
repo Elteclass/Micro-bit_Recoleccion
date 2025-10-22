@@ -20,8 +20,8 @@ type DatosMicrobit struct {
 
 func main() {
 	// Reemplaza 'TU_PUERTO_COM' con tu puerto
-	PUERTO := "COM7"
-	BAUD_RATE := 115200
+	PUERTO := "COM3"
+	BAUD_RATE := 38400
 
 	// 1. Configurar el puerto serie
 	config := &serial.Config{

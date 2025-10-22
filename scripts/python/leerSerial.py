@@ -2,8 +2,8 @@ import serial
 import json # Importamos la biblioteca JSON
 
 # Reemplaza 'TU_PUERTO_COM' con tu puerto (ej. 'COM3' o '/dev/tty.usbmodem14202')
-PUERTO_SERIAL = 'COM7'
-BAUD_RATE = 115200
+PUERTO_SERIAL = 'COM3'
+BAUD_RATE = 38400
 
 try:
     # Configura y abre la conexión serial
