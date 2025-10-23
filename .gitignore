@@ -1,0 +1,26 @@
+# Archivos de caché y configuración de Visual Studio
+.vs/
+*.suo
+*.user
+
+# Archivos de compilación (los culpables de los 110MB)
+*.obj
+*.pdb
+*.ilk
+*.exe
+*.dll
+*.lib
+*.pch
+*.exp
+*.map
+*.tlog
+*.sdf
+
+# Carpetas de resultados de compilación
+[Dd]ebug/
+[Rr]elease/
+x64/
+Win32/
+ARM/
+ARM64/
+ipch/
