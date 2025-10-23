@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36616.10 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "leerSerialCSharp", "leerSerialCSharp\leerSerialCSharp.csproj", "{F0E7AB75-AF85-4185-A8D4-A50650397258}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0E7AB75-AF85-4185-A8D4-A50650397258}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0E7AB75-AF85-4185-A8D4-A50650397258}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0E7AB75-AF85-4185-A8D4-A50650397258}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0E7AB75-AF85-4185-A8D4-A50650397258}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {098941B3-35F2-4112-8380-9AF38B4EED77}
+	EndGlobalSection
+EndGlobal
