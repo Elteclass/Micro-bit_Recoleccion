@@ -4,7 +4,7 @@ basic.showIcon(IconNames.Heart);
 serial.redirect(
     SerialPin.USB_TX,
     SerialPin.USB_RX,
-    BaudRate.BaudRate115200
+    BaudRate.BaudRate38400
 );
 
 // Bucle principal
