@@ -14,12 +14,16 @@
 Este es un proyecto integral de la materia de Sistemas Programables, diseñado para demostrar la **interoperabilidad entre hardware embebido y software de alto nivel**. El sistema consiste en un microcontrolador BBC micro:bit que actúa como una estación de sensores, capturando datos del entorno (temperatura, luz y aceleración) y transmitiéndolos en tiempo real a una computadora.
 
 El núcleo del proyecto radica en la implementación de **seis clientes de software independientes**, escritos en:
-- 🐍 Python
-- 🟨 JavaScript (Node.js)
-- 🐹 Go
-- 💜 C#
-- ⚡ C++
-- 🦀 Rust
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
+![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
+![micro:bit](https://img.shields.io/badge/micro:bit-00ED00?style=for-the-badge&logo=microbit&logoColor=white)
+![JSON](https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white)
 
 Cada uno de estos programas es capaz de conectarse al puerto serie, recibir el flujo de datos, interpretarlo y presentarlo al usuario, demostrando cómo un formato de datos estandarizado (JSON) permite que tecnologías completamente dispares consuman la misma fuente de información.
 
